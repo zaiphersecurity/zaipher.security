@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="./Assets/img/icone.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>Zaipher Security</title>
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    nav {
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .engrenagem {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #fff;
+        border-top-color: #007bff;
+        border-radius: 50%;
+        animation: girar 1s linear infinite;
+    }
+
+    @keyframes girar {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .logo {
+            color: #fff;
+            font-size: 24px;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .construction img {
+            width: 100px;
+        }
+
+        footer {
+            background-color: #000;
+            
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-content img {
+            width: 90px;
+            margin-right: 10px;
+        }
+        .pre-nav-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 320px;
+            height: auto;
+        }
+</style>
+</head>
+<body>
+    <img class="pre-nav-image" src="./Assets/img/banner2.png" alt="Logo">
+
+<!--Efeito das engrenagem-->
+<div class="engrenagem"></div>
+<h2>-- Em construção ---</h2>
+<p>Em breve novidades!</p>
+<div></div>
+<footer>
+    <div class="footer-content">
+       <a href="https://drive.google.com/file/d/13QQ1m9ktc6Q-Jmn81yRCNsH-WKWacpqI/view?usp=sharing"><img src="./Assets/img/banner2.png" alt="Logo da Zapher Security"></a>
+        <p>© <span id="currentYear"></span> Todos os direitos reservados</p>
+    </div>
+    <!-- Redes sociais-->
+    <div class="social-icons">
+        <a href="URL_DO_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="URL_DO_TIKTOK" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="URL_DO_WHATSAPP" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="URL_DO_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+<script>
+    // Atualiza o ano no rodapé
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
