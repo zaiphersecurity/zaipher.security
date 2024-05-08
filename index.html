@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+</head>
 <body>
 
 <!-- Navbar -->
@@ -28,10 +28,12 @@
   </div>
 </div>
 
-<!-- Barra lateral em telas pequenas ao clicar no ícone do menu - Não utilizado na primeira versão -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium " style="display:none" id="mySidebar">
-
-  </nav>
+<!-- Barra inferior -->
+<div id="cookieConsent">
+    Esta página utiliza cookies para garantir a melhor experiência possível para você. 
+    <button class="accept" onclick="acceptCookies();">Aceitar</button>
+    <button class="decline" onclick="declineCookies();">Recusar</button>
+</div>
 
 <!-- Header with full-height image -->
  <div class="mySlides w3-display-container w3-center">
@@ -62,12 +64,12 @@
     <div class="w3-quarter">
       <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
       <p class="w3-large"><b>Implementação de politicas de Segurança da informação</b></p>
-      <p>Ajudamos você a proteger seus dados contra ataques ciberneticos através de uso de tecnicas e treinamentos em segurança da informação no ambiente cooporativo. </p>
+      <p>Ajudamos você a proteger seus dados contra ataques cibernéticos através de uso de técnicas e treinamentos em segurança da informação no ambiente corporativo. </p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-eye w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large"><b>Visão</b></p>
-      <p>Na Zaipher Security, buscamos liderar a proteção digital através de treinamentos,acessorias e implementação, tornando a segurança da informação acessível e eficaz para todas as empresas.</p>
+      <p>Na Zaipher Security, buscamos liderar a proteção digital através de treinamentos, acessorias e implementação, tornando a segurança da informação acessível e eficaz para todas as empresas.</p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
@@ -77,12 +79,12 @@
     <div class="w3-quarter">
       <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large"><b>Objetivo</b></p>
-      <p>Tornar a segurança da informação e a conformidade com regulamentações como a LGPD acessíveis e eficazes para todas as organizações.Capacitando empresas a prosperar em um ambiente digital seguro.</p>
+      <p>Tornar a segurança da informação e a conformidade com regulamentações como a LGPD acessíveis e eficazes para todas as organizações. Capacitando empresas a prosperar em um ambiente digital seguro.</p>
     </div>
   </div>
 </div>
 
-<!--Bioggrafia -->
+<!-- Biografia -->
 <div class="w3-container  w3-dark-grey" style="padding:128px 16px" id="bio">
   <div class="w3-row-padding">
    <h3 class="w3-center">Biografia</h3>
@@ -104,10 +106,7 @@ Com uma equipe de especialistas altamente qualificados e experientes, a Zaipher 
   </div>
 </div>
 
-
-
-<!-- time -->
-
+<!-- Time -->
 <div class="w3-container w3-padding-64 w3-center" id="time">
     <h2>Conheça nossa equipe:</h2>
     <p>Os melhores profissionais, prontos para te atender!</p>
@@ -141,7 +140,6 @@ Com uma equipe de especialistas altamente qualificados e experientes, a Zaipher 
     <!-- Fim da primeira linha de membros do time polaris-->
 </div>
 
-
 <!-- Contato -->
 <div class="w3-container w3-dark-grey" style="padding:40px 16px" id="contact">
   <h3 class="w3-center">Contato</h3>
@@ -154,7 +152,6 @@ Com uma equipe de especialistas altamente qualificados e experientes, a Zaipher 
         <a href="https://www.tiktok.com/@zaiphersecurity?lang=pt-BR" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://api.whatsapp.com/send?phone=553298378961&text=Ol%C3%A1%20gostaria%20de%20saber%20mais%20sobre%20a%20Zaipher%20Security-acessoria%20em%20seguran%C3%A7a%20da%20informa%C3%A7%C3%A3o" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.linkedin.com/company/zaiphersecurity/" target="_blank"><i class="fab fa-linkedin"></i></a>
-
     </div>
     <div class="w3-half">
       <!-- Add Google Maps -->
@@ -164,8 +161,6 @@ Com uma equipe de especialistas altamente qualificados e experientes, a Zaipher 
     </div>
   </div>
 </div>
-</div>
-
 
 <!-- Footer -->
 <footer class= "w3-black w3-padding-16" >
@@ -176,9 +171,51 @@ Com uma equipe de especialistas altamente qualificados e experientes, a Zaipher 
     </div>
 </footer>
 <script>
-         // Atualiza o ano no rodapé
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+// Atualiza o ano no rodapé
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// Popup de política de cookies
+window.onload = function() {
+    var cookieConsent = document.getElementById("cookieConsent");
+    if (!getCookie("acceptCookies")) {
+        cookieConsent.style.display = "block";
+    }
+}
+
+function acceptCookies() {
+    setCookie("acceptCookies", true, 365);
+    document.getElementById("cookieConsent").style.display = "none";
+}
+
+function declineCookies() {
+    // Limpar cookies
+    document.cookie.split(";").forEach(function(c) {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    document.getElementById("cookieConsent").style.display = "none";
+}
+
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+</script>
 <script>
 // Modal de Imagens
 function onClick(element) {
@@ -206,7 +243,5 @@ function w3_close() {
 }
 </script>
 
-<script>
-</script>
 </body>
 </html>
