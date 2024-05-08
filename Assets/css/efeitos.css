@@ -83,4 +83,34 @@ body, html {
         .botao:hover {
             background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
         }
+/* Estilos para a barra de política de cookies */
+  #cookieConsent {
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    z-index: 999;
+  }
+
+  /* Estilos para os botões de aceitar e recusar */
+  #cookieConsent button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  #cookieConsent button.accept {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  #cookieConsent button.decline {
+    background-color: #dc3545;
+    color: #fff;
+  }
     
