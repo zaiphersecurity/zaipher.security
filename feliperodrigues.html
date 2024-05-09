@@ -4,70 +4,13 @@
 <link rel="icon" href="./Assets/img/icone.png" type="image/png">
 <title>Zaipher Security | Felipe Rodrigues</title>
 <meta charset="UTF-8">
+<script src="Assets/js/scripts.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Assets/css/Templates.css">
+<link rel="stylesheet" href="Assets/css/efeitos.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-        /* Estilos para o card */
-        .map-card {
-            width: 300px;
-            max-width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Estilos para o mapa incorporado */
-        .map-container {
-            width: 100%;
-            padding-bottom: 75%; /* Proporção do mapa (4:3) */
-            position: relative;
-        }
-
-        .map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
-
-/*Cabeçalho da imagem em altura total */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("Assets/img/banner.png");
-  min-height: 100vh;
-}
-
-.w3-bar .w3-button {
-  padding: 16px;
-
-
-}
-.footer-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer-content img {
-        width: 90px;
-        margin-right: 10px;
-    }
-</style>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
 </head>
 <body>
 
@@ -592,77 +535,5 @@ body, html {
         <a href="https://www.linkedin.com/company/zaiphersecurity/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
-<script>
-// Atualiza o ano no rodapé
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-// Popup de política de cookies
-window.onload = function() {
-    var cookieConsent = document.getElementById("cookieConsent");
-    if (!getCookie("acceptCookies")) {
-        cookieConsent.style.display = "block";
-    }
-}
-
-function acceptCookies() {
-    setCookie("acceptCookies", true, 365);
-    document.getElementById("cookieConsent").style.display = "none";
-}
-
-function declineCookies() {
-    // Limpar cookies
-    document.cookie.split(";").forEach(function(c) {
-        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-    });
-    document.getElementById("cookieConsent").style.display = "none";
-}
-
-function setCookie(name, value, days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
-</script>
-<script>
-// Modal de Imagens
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-
-// Alternar entre mostrar e ocultar a barra lateral ao clicar no ícone do menu
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-//Feche a barra lateral com o botão Fechar - Não utilizado na primeira versão
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
 </body>
 </html>
