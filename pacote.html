@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="icon" href="./Assets/img/icone.png" type="image/png">
-<title>Zaipher Security - Nós protegemos, você prospera</title>
+<title>Zaipher Security | Pacotes</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Assets/css/Templates.css">
@@ -16,18 +16,33 @@
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="https://zaiphersecurity.com.br" class="w3-bar-item w3-button w3-wide"><img class="w3-image w3-round-large" src="Assets/img/banner1.png" alt="Home" width="55" height="40" ></a></a>
+    <a href="https://zaiphersecurity.com.br" class="w3-bar-item w3-button w3-wide"><img class="w3-image w3-round-large" src="Assets/img/banner1.png" alt="Home" width="45" height="40" ></a></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
        <a href="#about" class="w3-bar-item w3-button">Sobre</a>
-      <a href="https://zaiphersecurity.com.br" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Biografia</a>
-      <a href="https://zaiphersecurity.com.br" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Nossa Equipe </a>
+      <a href="#https://zaiphersecurity.com.br/" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Biografia</a>
+      <a href="https://zaiphersecurity.com.br/" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Nossa Equipe </a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contato</a>
-	  <a href="#preco" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> Pacotes</a>
+     <a href="#preco" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> Pacotes</a>
     </div>
-
+<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
 </div>
+
+<!-- Modo mobile-->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fechar X</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Sobre</a>
+  <a href="https://zaiphersecurity.com.br/" onclick="w3_close()" class="w3-bar-item w3-button">Biografia</a>
+  <a href="https://zaiphersecurity.com.br/" onclick="w3_close()" class="w3-bar-item w3-button">Nossa Equipe</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contato</a>
+  <a href="#preco" onclick="w3_close()" class="w3-bar-item w3-button">Pacotes</a>
+</nav>
+  </div>
+</div>
+
 
 <!-- Barra inferior -->
 <div id="cookieConsent">
@@ -56,8 +71,6 @@
   </div>
    </div>
   </div>
-
-</header>
 
 <!-- Sobre -->
 <div class="w3-container" style="padding:128px 16px" id="about">
