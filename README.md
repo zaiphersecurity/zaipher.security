@@ -21,15 +21,7 @@ O site da Zaipher Security é uma plataforma online que apresenta informações 
 - JavaScript
   
 
-## Como Contribuir
 
-Se você deseja contribuir para o desenvolvimento do site da Zaipher Security, siga estas etapas:
-
-1. Faça um fork deste repositório.
-2. Crie uma branch para a sua contribuição (`git checkout -b feature/sua-contribuicao`).
-3. Faça suas alterações e commit (`git commit -am 'Adicione sua contribuição'`).
-4. Faça push para a branch (`git push origin feature/sua-contribuicao`).
-5. Abra um Pull Request.
 
 ## Como Executar Localmente
 
