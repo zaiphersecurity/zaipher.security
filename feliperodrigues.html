@@ -74,16 +74,30 @@ body, html {
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="https://zaiphersecurity.com.br" class="w3-bar-item w3-button w3-wide"><img class="w3-image w3-round-large" src="Assets/img/banner1.png" alt="Home" width="55" height="40" ></a></a>
+    <a href="https://zaiphersecurity.com.br" class="w3-bar-item w3-button w3-wide"><img class="w3-image w3-round-large" src="Assets/img/banner1.png" alt="Home" width="45" height="40" ></a></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
        <a href="#about" class="w3-bar-item w3-button">Sobre</a>
       <a href="#bio" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Biografia</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Certificações</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Certificções </a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contato</a>
      <a href="https://zaiphersecurity.com.br/pacote" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> Pacotes</a>
     </div>
+<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
 
+<!-- Modo mobile-->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fechar X</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Sobre</a>
+  <a href="#bio" onclick="w3_close()" class="w3-bar-item w3-button">Biografia</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Certificações</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contato</a>
+  <a href="https://zaiphersecurity.com.br/pacote" onclick="w3_close()" class="w3-bar-item w3-button">Pacotes</a>
+</nav>
   </div>
 </div>
 
@@ -579,9 +593,51 @@ body, html {
     </div>
 </footer>
 <script>
-         // Atualiza o ano no rodapé
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+// Atualiza o ano no rodapé
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// Popup de política de cookies
+window.onload = function() {
+    var cookieConsent = document.getElementById("cookieConsent");
+    if (!getCookie("acceptCookies")) {
+        cookieConsent.style.display = "block";
+    }
+}
+
+function acceptCookies() {
+    setCookie("acceptCookies", true, 365);
+    document.getElementById("cookieConsent").style.display = "none";
+}
+
+function declineCookies() {
+    // Limpar cookies
+    document.cookie.split(";").forEach(function(c) {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    document.getElementById("cookieConsent").style.display = "none";
+}
+
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+</script>
 <script>
 // Modal de Imagens
 function onClick(element) {
@@ -607,9 +663,6 @@ function w3_open() {
 function w3_close() {
     mySidebar.style.display = "none";
 }
-</script>
-
-<script>
 </script>
 </body>
 </html>
