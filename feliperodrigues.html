@@ -4,7 +4,6 @@
 <link rel="icon" href="./Assets/img/icone.png" type="image/png">
 <title>Zaipher Security | Felipe Rodrigues</title>
 <meta charset="UTF-8">
-<script src="Assets/js/scripts.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Assets/css/Templates.css">
 <link rel="stylesheet" href="Assets/css/efeitos.css">
@@ -535,5 +534,31 @@
         <a href="https://www.linkedin.com/company/zaiphersecurity/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
+<script>
+// Modal de Imagens
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Alternar entre mostrar e ocultar a barra lateral ao clicar no ícone do menu
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+//Feche a barra lateral com o botão Fechar - Não utilizado na primeira versão
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</scripts>
 </body>
 </html>
